@@ -204,6 +204,10 @@ a.active-link {
   margin-top: 10px;
 }
 
+.splash-big img {
+  max-width: 90vw;
+}
+
 .splash-little {
   margin: 10px 0 50px 0;
 }
