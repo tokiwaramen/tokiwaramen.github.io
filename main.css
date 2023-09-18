@@ -73,6 +73,14 @@ hr.full-width {
   width: 60%;
 }
 
+.content p {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1.6px;
+  line-height: 25.6px;
+  text-align: center;
+}
+
 .faq li {
   margin-bottom: 15px;
 }
@@ -104,12 +112,7 @@ hr.full-width {
 }
 
 .menu p {
-  font-size: 16px;
-  font-weight: 300;
-  letter-spacing: 1.6px;
-  line-height: 25.6px;
   margin-bottom: 15px;
-  text-align: center;
 }
 
 .menu .cash-and-debit {
@@ -177,8 +180,8 @@ hr.full-width {
   transition: color 0.5s;
 }
 
-.navbar a:hover,
-.navbar a.active-link {
+a:hover,
+a.active-link {
   color: var( --hover-link );
 }
 
