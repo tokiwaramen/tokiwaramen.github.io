@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+
+/* Config */
+
+:root {
+  --default-text: white;
+  --hover-link: rgb( 162, 131, 78 );
+  --overlay: rgba( 0, 0, 0, 0.8 );
+}
+
+/* CSS Styles */
+
+* {
+  margin: 0;
+}
+
+a {
+  color: var( --default-text );
+  text-decoration: none;
+}
+
+body {
+  background-attachment: fixed;
+  background-image: url( "images/BG_FINAL.jpg" );
+  background-repeat: no-repeat;
+  color: var( --default-text );
+  font-family: 'Titillium Web', sans-serif;
+}
+
+footer {
+  height: 20vh;
+  width: 100%;
+}
+
+h2 {
+  letter-spacing: 2px;
+}
+
+h3 {
+  letter-spacing: 3.42px;
+}
+
+hr {
+  border: 1px solid rgba( 255, 255, 255, 0.1 );
+  margin: 50px 0;
+  width: 60%;
+}
+
+.big-splash {
+  margin-top: 10px;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.navbar {
+  align-items: center;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+}
+
+.navbar a {
+  display: block;
+  color: var( --default-text );
+  font-size: 14px;
+  letter-spacing: 2.8px;
+  margin: 0 15px;
+  text-transform: uppercase;
+  transition: color 0.5s;
+}
+
+.navbar a:hover,
+.navbar a.active-link {
+  color: var( --hover-link );
+}
+
+.overlay {
+  background-color: var( --overlay );
+  height: 102vh;
+  left: -1vw;
+  position: fixed;
+  top: -1vh;
+  width: 102vw;
+  z-index: -1;
+}
+
+.spacer {
+  height: 30px;
+  width: 100%;
+}
+
+.text-align-center {
+  text-align: center;
+}
