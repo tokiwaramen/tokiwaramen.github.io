@@ -4,6 +4,7 @@
 
 :root {
   --default-text: white;
+  --flat-bg: rgb( 26, 26, 26 );
   --hover-link: rgb( 162, 131, 78 );
   --overlay: rgba( 0, 0, 0, 0.8 );
 }
@@ -20,11 +21,16 @@ a {
 }
 
 body {
-  background-attachment: fixed;
-  background-image: url( "images/BG_FINAL.jpg" );
-  background-repeat: no-repeat;
+  background-color: var( --flat-bg );
   color: var( --default-text );
   font-family: 'Titillium Web', sans-serif;
+}
+
+body.has-image {
+  background-attachment: fixed;
+  background-color: transparent;
+  background-image: url( "images/BG_FINAL.jpg" );
+  background-repeat: no-repeat;
 }
 
 footer {
@@ -41,13 +47,9 @@ h3 {
 }
 
 hr {
-  border: 1px solid rgba( 255, 255, 255, 0.1 );
+  border-top: 1px solid rgba( 255, 255, 255, 0.1 );
   margin: 50px 0;
   width: 60%;
-}
-
-.big-splash {
-  margin-top: 10px;
 }
 
 .container {
@@ -57,6 +59,89 @@ hr {
   justify-items: center;
   min-height: 100vh;
   width: 100vw;
+}
+
+.menu {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+}
+
+.menu h2 {
+  font-weight: 300;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.menu h3 {
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 1.6px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.menu hr {
+  border-top: 1px solid var( --default-text );
+}
+
+.menu p {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1.6px;
+  line-height: 25.6px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.menu .cash-and-debit {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 2.6px;
+  margin-top: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.menu .section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.menu .section .menu-item {
+  margin-top: 40px;
+}
+
+.menu .section .menu-item h4 {
+  font-size: 17.6px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.menu .section .menu-item h4.no-transform {
+  text-transform: none;
+}
+
+.menu .section .menu-item div {
+  letter-spacing: 1.6px;
+}
+
+.menu .section-header div {
+  font-size: 13.6px;
+  font-weight: 300;
+  letter-spacing: 1.6px;
+  line-height: 19px;
+}
+
+.menu .spacer {
+  height: 100px;
+  width: 100%;
 }
 
 .navbar {
@@ -94,6 +179,14 @@ hr {
 .spacer {
   height: 30px;
   width: 100%;
+}
+
+.splash-big {
+  margin-top: 10px;
+}
+
+.splash-little {
+  margin: 10px 0 50px 0;
 }
 
 .text-align-center {
