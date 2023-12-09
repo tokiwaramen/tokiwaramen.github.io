@@ -56,6 +56,28 @@ hr.full-width {
   width: 100%;
 }
 
+.announcement {
+  border: 2px solid white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  margin-bottom: 15px;
+  padding: 10px;
+  text-align: center;
+}
+
+.announcement > div {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.announcement > div > span {
+  width: 250px;
+}
+
 .container {
   align-items: center;
   display: flex;
