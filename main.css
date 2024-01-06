@@ -237,3 +237,7 @@ a.active-link {
 .text-align-center {
   text-align: center;
 }
+
+.time-emphasize {
+  font-size: 40px;
+}
