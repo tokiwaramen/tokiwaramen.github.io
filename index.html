@@ -8,23 +8,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </head>
   <body class="has-image">
     <div class="overlay"></div>
-    <div class="container">
-      <nav class="navbar">
-          <a href="/" class="active-link">Home</a>
-          <a href="/menu">Menu</a>
-          <a href="/faq">FAQ</a>
-          <a href="/contact">Contact</a>
-      </nav>
-      <div class="splash-big">
-        <img src="images/tokiwa.png" />
+    <div class="md:container lg:container mx-auto px-4">
+      <div class="flex justify-end">
+        <nav class="flex flex-col md:items-center md:justify-end">
+          <ul class="p-8 md:flex md:justify-end items-center text-align-center md:z-auto md:static bg-zinc-900 rounded-lg w-full absolute left-0 md:w-auto md:bg-transparent opacity-0 md:opacity-100">
+            <li class="mx-4 my-6">
+              <a href="/" class="uppercase">Home</a>
+            </li>
+            <li class="mx-4 my-6">
+              <a href="/menu" class="uppercase">Menu</a>
+            </li>
+            <li class="mx-4 my-6">
+              <a href="/faq" class="uppercase">FAQ</a>
+            </li>
+            <li class="mx-4 my-6">
+              <a href="/contact" class="uppercase">Contact</a>
+            </li>
+            <li class="m-4 my-6 border-t md:border-none">
+              <a href="mailto:info@tokiwaramen.ca" class="text-xl"><ion-icon name="mail-outline" class="mt-4 md:mt-2"></ion-icon></a>
+            </li>
+          </ul>
+        </nav>
+        <span class="text-2xl cursor-pointer m-6 md:hidden">
+          <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+        </span>
+      </div>
+      <script>
+        function Menu(e) {
+          let list = document.querySelector('ul');
+          e.name === "menu" ? (e.name = "close",  list.classList.add('opacity-100')): (e.name = "menu", list.classList.remove('opacity-100'));
+        }
+      </script>
+      <div class="flex justify-center m-6 py-4">
+        <img src="images/tokiwa.png" class="h-80 md:h-96" />
       </div>
       <hr>
-      <div class="text-align-center time-emphasize">
-        Open 7 days a week<br />
-        11am - 3pm*
+      <div class="text-align-center">
+        <h5 class="text-4xl md:text-5xl mt-8">Open 7 days a week</h5><br />
+        <h6 class="text-3xl md:text-4xl mb-8">11am - 3pm*</h6>
       </div>
       <!-- <div class="announcement">
         <div>Holiday Hours</div>
@@ -45,11 +72,20 @@
       </div> -->
       <!-- <div style="font-size: 18px; margin-top: 15px;">Gift cards available</div> -->
       <div class="spacer"></div>
-      <h2 class="text-align-center"><b>Edmonton Brewery District</b></h2>
+      <h2 class="text-align-center md:text-lg lg:text-xl"><b>11978 - 104 Ave<br />Edmonton, AB, T5K 0G6</b></h2>
       <div class="spacer"></div>
-      <p class="text-align-center" style="font-size: 20px">11978 - 104 Ave<br />Edmonton, AB, T5K 0G6</p>
+      <p class="text-align-center mb-6 md:text-lg lg:text-xl" style="font-size: 20px">Edmonton Brewery District</p>
+      <div class="flex item-center justify-center m-6">
+        <a href='https://maps.app.goo.gl/b67m8MTwT8tmNGto8?g_st=ic'>
+          <img class="h-6 mx-4" src='images/google.png' alt='google map logo'/>
+        </a>
+        <a href='https://maps.apple.com/?address=11978%20104th%20Ave%20Nw,%20Edmonton%20AB%20T5K%200G6,%20Canada&auid=9588563690901774416&ll=53.547454,-113.527790&lsp=9902&q=Tokiwa%20Ramen'>
+          <img class="h-6" src='images/apple.png' alt='apple map logo'/>
+        </a>
+      </div>
       <hr>
-      <p class="text-align-center" style="font-size: 15px">* Last call at 2:45pm or earlier when no more soup</p>
+      <p class="text-align-center my-2" style="font-size: 15px">* Last call at 2:45pm or earlier when no more soup</p>
+      </hr>
     </div>
     <footer></footer>
   </body>

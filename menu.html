@@ -8,50 +8,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </head>
   <body>
-    <div class="container">
-      <nav class="navbar">
-          <a href="/">Home</a>
-          <a href="/menu" class="active-link">Menu</a>
-          <a href="/faq">FAQ</a>
-          <a href="/contact">Contact</a>
-      </nav>
+    <div class="container mx-auto px-4">
+      <div class="flex justify-end">
+        <nav class="flex flex-col md:items-center md:justify-end">
+          <ul class="p-8 md:flex md:justify-end items-center text-align-center md:z-auto md:static bg-zinc-900 rounded-lg w-full absolute left-0 md:w-auto md:bg-transparent opacity-0 md:opacity-100">
+            <li class="mx-4 my-6">
+              <a href="/" class="uppercase">Home</a>
+            </li>
+            <li class="mx-4 my-6">
+              <a href="/menu" class="uppercase">Menu</a>
+            </li>
+            <li class="mx-4 my-6">
+              <a href="/faq" class="uppercase">FAQ</a>
+            </li>
+            <li class="mx-4 my-6">
+              <a href="/contact" class="uppercase">Contact</a>
+            </li>
+            <li class="m-4 my-6 border-t md:border-none">
+              <a href="mailto:info@tokiwaramen.ca" class="text-xl"><ion-icon name="mail-outline" class="mt-4 md:mt-2"></ion-icon></a>
+            </li>
+          </ul>
+        </nav>
+        <span class="text-2xl cursor-pointer m-6 md:hidden">
+          <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+        </span>
+      </div>
+      <script>
+        function Menu(e) {
+          let list = document.querySelector('ul');
+          e.name === "menu" ? (e.name = "close",  list.classList.add('opacity-100')): (e.name = "menu", list.classList.remove('opacity-100'));
+        }
+      </script>
+     <div class="flex flex-col justify-center items-center">
       <div class="splash-little">
         <img src="images/tokiwa_vsm.png" />
       </div>
-      <div class="menu content">
-        <h2>Ramen</h2>
-        <p>
-          ALL RAMEN BOWLS come with Pork Charshu (except GOMA GOMA and SPICY GOMA), Wood Ear<br />
-          Mushrooms, half boiled Egg, Bean Sprouts, Shanghai Bok Choi, and Green Onion.
+      <div class="menu content w-2/3 md:w-3/4">
+        <h1 class="uppercase text-2xl lg:text-3xl text-center m-4">Ramen</h1>
+        <p class="text-align-center text-base md:text-base">
+          ALL RAMEN BOWLS come with Pork Charshu (except GOMA GOMA and SPICY GOMA), Wood Ear Mushrooms, half boiled Egg, Bean Sprouts, Shanghai Bok Choi, and Green Onion.
         </p>
-        <p>Zero preservatives used. All soup stock ingredients are natural and made in-house daily.</p>
-
+        <p class="text-align-center text-base md:text-base">Zero preservatives used. All soup stock ingredients are natural and made in-house daily.
+        
+        </p>
         <hr>
-
         <div class="section">
           <div class="section-header">
-            <h3>Ten Hour Pork Soup</h3>
-            <div>Served with pork charshu (braised pork), except GOMA GOMA and SPICY GOMA</div>
+            <h2 class="text-2xl lg:text-3xl">Ten Hour Pork Soup</h2>
+            <p>Served with pork charshu (braised pork), except GOMA GOMA and SPICY GOMA</p>
           </div>
           <div class="menu-item">
-            <h4>Tokyo Tonkotsu</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Tokyo Tonkotsu</h3>
             <div>Tokyo style, shoyu (soy) broth</div>
             <div>16.00</div>
           </div>
           <div class="menu-item">
-            <h4>Black Garlic</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Black Garlic</h3>
             <div>shoyu broth with black garlic oil</div>
             <div>17.00</div>
           </div>
           <div class="menu-item">
-            <h4>Goma Goma</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Goma Goma</h3>
             <div>nikumiso (chopped pork) with chili oil drizzle</div>
             <div>17.00</div>
           </div>
           <div class="menu-item">
-            <h4>Spicy Goma</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Spicy Goma</h3>
             <div>moderately spicy goma goma</div>
             <div>17.50</div>
           </div>
@@ -61,63 +88,70 @@
 
         <div class="section">
           <div class="section-header">
-            <h3>Six Hour Chicken Soup</h3>
+            <h2 class="text-2xl lg:text-3xl">Six Hour Chicken Soup</h2>
             <div>Served with pork charshu (braised pork). May be substituted for chicken for an additional $2</div>
           </div>
           <div class="menu-item">
-            <h4>Chuka Soba</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Chuka Soba</h3>
             <div>classic shoyu (soy) broth</div>
             <div>16.00</div>
           </div>
           <div class="menu-item">
-            <h4>Yuzu Shio</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Yuzu Shio</h3>
             <div>yuzu (Japanese citrus) broth</div>
             <div>17.00</div>
           </div>
           <div class="menu-item">
-            <h4>Hokkaido Miso</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Hokkaido Miso</h3>
             <div>3 kinds of miso bases</div>
             <div>17.00</div>
           </div>
           <div class="menu-item">
-            <h4>Spicy Miso</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Spicy Miso</h3>
             <div>moderately spicy Hokkaido Miso</div>
             <div>17.50</div>
           </div>
           <div class="menu-item">
-            <h4>Aka Kara</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Aka Kara</h3>
             <div>spicy, 3 kinds of chili peppers</div>
             <div>17.50</div>
           </div>
           <div class="spacer"></div>
-          <div class="menu-item">
-            <h4>Veggie Goma</h4>
-            <div>sesame, miso broth with tofu</div>
-            <div>17.50</div>
-          </div>
-          <div class="spacer"></div>
-          <div class="menu-item">
-            <h4>Feature Ramen</h4>
-            <div>Please ask your server</div>
-          </div>
+
+          <section class="section">
+            <div class="section-header">
+              <h2 class="uppercase text-2xl lg:text-3xl">House Special Soup</h2>
+            </div>
+            <div class="menu-item">
+              <h3 class="text-lg md:text-xl lg:text-2xl">Veggie Goma</h3>
+              <div>sesame, miso broth with tofu and tomatoes</div>
+              <div>17.50</div>
+            </div>
+            
+            <div class="menu-item">
+              <h3 class="text-lg md:text-xl lg:text-2xl">Feature Ramen</h3>
+              <div>Please ask our server</div>
+            </div>
+          </section>
+          
         </div>
 
         <div class="spacer"></div>
 
         <div class="section">
           <div class="section-header">
-            <h3>Extra Toppings</h3>
+            <h2 class="uppercase text-2xl lg:text-3xl">Extra Toppings</h2>
           </div>
           <div class="menu-item">
-            <h4 class="no-transform">pork charshu, nikumiso (chopped pork)</h4>
+            <h3 class="no-transform font-bold text-lg md:text-xl">pork charshu, nikumiso (chopped pork)</h3>
             <div>3.5</div>
           </div>
           <div class="menu-item">
-            <h4 class="no-transform">chicken charshu</h4>
+            <h3 class="no-transform font-bold text-lg md:text-xl">chicken charshu</h3>
             <div>4.5</div>
           </div>
           <div class="menu-item">
-            <h4 class="no-transform">egg / mushrooms / bok choy / greens / garlic</h4>
+            <h3 class="no-transform font-bold text-lg md:text-xl">egg / mushrooms / bok choy / greens / garlic</h3>
             <div>1.5</div>
           </div>
         </div>
@@ -126,27 +160,27 @@
 
         <div class="section">
           <div class="section-header">
-            <h3>Rice Bowls and Sides</h3>
+            <h2 class="uppercase text-2xl lg:text-3xl">Rice Bowls and Sides</h2>
             <div>Served with pork or chicken, bean sprouts, greens and special soy</div>
           </div>
           <div class="menu-item">
-            <h4>Pork Rice Bowl</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Pork Rice Bowl</h3>
             <div>small 5 / large 12</div>
           </div>
           <div class="menu-item">
-            <h4>Chicken Rice Bowl</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Chicken Rice Bowl</h3>
             <div>small 6.5 / large 13</div>
           </div>
           <div class="menu-item">
-            <h4>Vegetarian Rice Bowl</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Vegetarian Rice Bowl</h3>
             <div>small 6 / large 12</div>
           </div>
           <div class="menu-item">
-            <h4>Plain Rice Bowl</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Plain Rice Bowl</h3>
             <div>small 2.5</div>
           </div>
           <div class="menu-item">
-            <h4>Bou Gyoza</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Bou Gyoza</h3>
             <div>4 pieces (pork) 6.5</div>
           </div>
         </div>
@@ -155,44 +189,40 @@
 
         <div class="section">
           <div class="section-header">
-            <h3>Beverages</h3>
+            <h2 class="uppercase text-2xl lg:text-3xl">Beverages</h2>
           </div>
           <div class="menu-item">
-            <h4>Cold Brew Unsweetened Tea</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Cold Brew Unsweetened Tea</h3>
             <div>Fukasmushi (Green) / Organic Houjicha (Black)</div>
             <div>glass (12 oz) 3.5 / bottle (33 oz) 8</div>
           </div>
           <div class="menu-item">
-            <h4>Hot Green Tea</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Hot Green Tea</h3>
             <div>Genmaicha 3.5</div>
           </div>
           <div class="menu-item">
-            <h4>Japanese and Local Craft Beer</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Japanese and Local Craft Beer</h3>
             <div>Regular 7</div>
             <div>Tall boys 8</div>
           </div>
           <div class="menu-item">
-            <h4>Japanese Masumi Sake</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Japanese Masumi Blue Sake</h3>
             <div>6 oz bottle 11</div>
           </div>
           <div class="menu-item">
-            <h4>Hokkaido Zoo Cup Sake (Hot or Cold)</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Jumai Cup Sake (Hot or Cold)</h3>
             <div>6.5 oz 11</div>
           </div>
           <div class="menu-item">
-            <h4>Yuri Masamune Cup Sake (Hot or Cold)</h4>
-            <div>6.5 oz 11</div>
-          </div>
-          <div class="menu-item">
-            <h4>Craft Soda</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Craft Soda</h3>
             <div>ginger beer / root beer 6</div>
           </div>
           <div class="menu-item">
-            <h4>Ramune</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Ramune</h3>
             <div>Japanese soft drink 4.5</div>
           </div>
           <div class="menu-item">
-            <h4>Soft Drink</h4>
+            <h3 class="text-lg md:text-xl lg:text-2xl">Soft Drink</h3>
             <div>pop, juice 3</div>
             <div>sparkling water 3.75</div>
           </div>
@@ -200,10 +230,10 @@
 
         <div class="spacer"></div>
 
-        <p>We are peanut free. Please check with your server if you have any other food allergy concerns.</p>
-        <p>Tables of 6 or more will be charged an automatic 18% gratuity. Bills will not be split.</p>
+        <p class="text-align-center text-base md:text-md lg:text-lg">We are peanut free. Please check with our server if you have any other food allergy concerns.</p>
+        <p class="text-align-center text-base md:text-md lg:text-lg">Tables of 6 or more will be charged an automatic 18% gratuity. Bills will not be split.</p>
 
-        <div class="cash-and-debit">Cash & Debit Only!</div>
+        <div class="uppercase font-semibold text-2xl md:text-3xl my-8">Cash & Debit Only!</div>
       </div>
     </div>
     <footer></footer>
