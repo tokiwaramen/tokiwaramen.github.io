@@ -46,7 +46,7 @@ h3 {
   letter-spacing: 3.42px;
 }
 
-hr {
+/* hr {
   border-top: 1px solid rgba( 255, 255, 255, 0.1 );
   margin: 50px 0;
   width: 60%;
@@ -54,14 +54,13 @@ hr {
 
 hr.full-width {
   width: 100%;
-}
+} */
 
 .announcement {
-  border: 2px solid white;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: rgb(199, 191, 191) 0px 3px 3px, rgba(250, 250, 250, 0.13) 0px 0px 3px 3px;
   display: flex;
   flex-direction: column;
-  font-size: 30px;
   margin-bottom: 15px;
   padding: 10px;
   text-align: center;
@@ -74,9 +73,9 @@ hr.full-width {
   justify-content: center;
 }
 
-.announcement > div > span {
-  width: 250px;
-}
+/* .announcement > div > span {
+  width: 150px;
+} */
 
 /* .container {
   align-items: center;
