@@ -58,7 +58,7 @@ hr.full-width {
 
 .announcement {
   border-radius: 5px;
-  box-shadow: rgb(199, 191, 191) 0px 3px 3px, rgba(250, 250, 250, 0.13) 0px 0px 3px 3px;
+  box-shadow: rgb(199, 191, 191) 0px 0px 3px, rgba(250, 250, 250, 0.13) 0px 0px 3px 3px;
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
