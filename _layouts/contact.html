@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{ page.title }} - Tokiwa Ramen</title>
+  <meta name="description" content="Tokiwa Ramen site">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <div class="container mx-auto px-4">
+    {% include navbar.html %} 
+    <div class="flex flex-col justify-center items-center">
+      <div class="splash-little">
+        <img src="/assets/images/tokiwa_vsm.png" alt="Tokiwa Logo">
+      </div>
+       <div class="content text-center w-80 md:w-96 lg:w-auto">
+        <div class="spacer"></div>
+          {{ content }}
+       </div>
+    </div> 
+<footer class="text-center p-10 text-sm text-gray-400">© {{ "now" | date: "%Y" }} Tokiwa Ramen</footer>
+</body>
+</html>

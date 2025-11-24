@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>联系方式 - Tokiwa Ramen</title>
+  <meta name="description" content="Tokiwa Ramen site">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <div class="container mx-auto px-4">
+    <!-- NAVIGATION -->
+<div class="flex justify-between items-center p-4">
+  <!-- Desktop Nav & Mobile Menu -->
+  <nav class="w-full">
+    <ul id="menu-list" class="hidden md:flex md:justify-end md:static md:bg-transparent md:p-0 flex-col absolute top-0 left-0 w-full bg-zinc-900 text-white p-8 md:flex-row md:min-h-0 min-h-screen z-50 transition-opacity duration-300 opacity-0 md:opacity-100">
+
+      <!-- Close Button (Mobile only) -->
+      <li class="flex justify-end md:hidden">
+        <button onclick="toggleMobileMenu()" class="text-3xl mb-6">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </li>
+
+      <!-- Main Menu Items -->
+      
+      
+
+      <li class="mx-4 my-6"><a href="/zh/" class="uppercase hover:text-[rgb(162,131,78)]">主页</a></li>
+      <li class="mx-4 my-6"><a href="/zh/menu/" class="uppercase hover:text-[rgb(162,131,78)]">菜单</a></li>
+      <li class="mx-4 my-6"><a href="/zh/faq/" class="uppercase hover:text-[rgb(162,131,78)]">常见问题</a></li>
+      <li class="mx-4 my-6"><a href="/zh/contact/" class="uppercase hover:text-[rgb(162,131,78)]">联系我们</a></li>
+
+
+      <!-- Language Switcher -->
+      <li class="mx-4 my-6 w-full md:w-auto relative">
+        <button id="language-button" onclick="toggleLangDropdown(event)" class="uppercase flex items-center w-full md:w-auto hover:text-[rgb(162,131,78)]">
+          <ion-icon name="globe-outline" class="text-xl mr-2 transition-colors duration-300"></ion-icon>
+          <span class="md:hidden">
+            语言
+          </span>
+          <ion-icon id="lang-chevron" name="chevron-down-outline" class="ml-auto md:hidden transition-transform duration-300"></ion-icon>
+        </button>
+        <ul id="lang-options" class="hidden md:absolute right-0 bg-zinc-900 text-white md:shadow-lg md:rounded-lg md:mt-2 md:text-left w-full md:w-auto">
+          
+          
+
+          
+            
+          
+
+          
+          
+
+          <li class="mt-2">
+            <a href="/contact/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                English
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/zh/contact/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 font-bold">
+                中文
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/ja/contact/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                日本語
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/ko/contact/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                한국어
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/fr/contact/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                Français
+            </a>
+          </li>
+        
+      </ul>
+  </nav>
+
+  <!-- Hamburger (Mobile only) -->
+  <span class="text-2xl cursor-pointer m-4 md:hidden z-60">
+    <ion-icon name="menu-outline" onclick="toggleMobileMenu(this)"></ion-icon>
+  </span>
+</div>
+
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('menu-list');
+    const isHidden = menu.classList.contains('opacity-0');
+    if (isHidden) {
+      menu.classList.remove('opacity-0');
+      menu.classList.remove('hidden');
+    } else {
+      menu.classList.add('opacity-0');
+      setTimeout(() => menu.classList.add('hidden'), 300);
+    }
+  }
+
+  function toggleLangDropdown(event) {
+    event.stopPropagation();
+    const langList = document.getElementById('lang-options');
+    const chevron = document.getElementById('lang-chevron');
+    langList.classList.toggle('hidden');
+    if (chevron) chevron.classList.toggle('rotate-180');
+  }
+
+  document.addEventListener('click', function (event) {
+    const langDropdown = document.getElementById('lang-options');
+    const langButton = event.target.closest('#language-button');
+    const isInsideDropdown = langDropdown && langDropdown.contains(event.target);
+    if (!isInsideDropdown && !langButton && window.innerWidth >= 768) {
+      langDropdown?.classList.add('hidden');
+      document.getElementById('lang-chevron')?.classList.remove('rotate-180');
+    }
+  });
+</script>
+ 
+    <div class="flex flex-col justify-center items-center">
+      <div class="splash-little">
+        <img src="/assets/images/tokiwa_vsm.png" alt="Tokiwa Logo">
+      </div>
+       <div class="content text-center w-80 md:w-96 lg:w-auto">
+        <div class="spacer"></div>
+          <p class="md:text-lg m-6">
+    <a href="https://goo.gl/maps/xKs9c9zqyd72">11978 – 104 Ave Edmonton, AB<br /> T5K 0G6</a><br />
+</p>
+<p class="md:text-lg m-6">位于埃德蒙顿 <a href="http://brewerydistrictedmonton.ca/">Brewery District</a><br /></p>
+<p class="md:text-lg">780-761-1400</p>
+<div class="spacer"></div>
+<p class="md:text-lg">
+    邮件: <a href="mailto:info@tokiwaramen.ca">info@tokiwaramen.ca</a><br />
+</p>
+<div class="spacer"></div>
+<p class="text-xl md:text-2xl mt-10">有兴趣加入我们的团队吗?</p>
+<p><br /></p>
+<p class="md:text-lg my-6">
+    请将您的简历发送至<br /> <a href="mailto:info@tokiwaramen.ca">info@tokiwaramen.ca</a>
+</p>
+<p class="md:text-lg">我们接受英语和日语简历。</p>
+
+       </div>
+    </div> 
+<footer class="text-center p-10 text-sm text-gray-400">© 2025 Tokiwa Ramen</footer>
+</body>
+</html>

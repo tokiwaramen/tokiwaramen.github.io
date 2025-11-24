@@ -1,0 +1,19 @@
+en:
+  name: English
+  path: /
+
+zh:
+  name: 中文
+  path: /zh/
+
+ja:
+  name: 日本語
+  path: /ja/
+
+ko:
+  name: 한국어
+  path: /ko/
+
+fr:
+  name: Français
+  path: /fr/

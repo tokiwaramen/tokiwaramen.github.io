@@ -1,0 +1,102 @@
+<!-- NAVIGATION -->
+<div class="flex justify-between items-center p-4">
+  <!-- Desktop Nav & Mobile Menu -->
+  <nav class="w-full">
+    <ul id="menu-list" class="hidden md:flex md:justify-end md:static md:bg-transparent md:p-0 flex-col absolute top-0 left-0 w-full bg-zinc-900 text-white p-8 md:flex-row md:min-h-0 min-h-screen z-50 transition-opacity duration-300 opacity-0 md:opacity-100">
+
+      <!-- Close Button (Mobile only) -->
+      <li class="flex justify-end md:hidden">
+        <button onclick="toggleMobileMenu()" class="text-3xl mb-6">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </li>
+
+      <!-- Main Menu Items -->
+      {% assign lang_code = page.lang | default: site.defaultLang %}
+      {% assign nav = site.data.navigation[lang_code] %}
+
+      <li class="mx-4 my-6"><a href="{% if lang_code != site.defaultLang %}/{{ lang_code }}{% endif %}/" class="uppercase hover:text-[rgb(162,131,78)]">{{ nav.home }}</a></li>
+      <li class="mx-4 my-6"><a href="{% if lang_code != site.defaultLang %}/{{ lang_code }}{% endif %}/menu/" class="uppercase hover:text-[rgb(162,131,78)]">{{ nav.menu }}</a></li>
+      <li class="mx-4 my-6"><a href="{% if lang_code != site.defaultLang %}/{{ lang_code }}{% endif %}/faq/" class="uppercase hover:text-[rgb(162,131,78)]">{{ nav.faq }}</a></li>
+      <li class="mx-4 my-6"><a href="{% if lang_code != site.defaultLang %}/{{ lang_code }}{% endif %}/contact/" class="uppercase hover:text-[rgb(162,131,78)]">{{ nav.contact }}</a></li>
+
+
+      <!-- Language Switcher -->
+      <li class="mx-4 my-6 w-full md:w-auto relative">
+        <button id="language-button" onclick="toggleLangDropdown(event)" class="uppercase flex items-center w-full md:w-auto hover:text-[rgb(162,131,78)]">
+          <ion-icon name="globe-outline" class="text-xl mr-2 transition-colors duration-300"></ion-icon>
+          <span class="md:hidden">
+            {{ site.data.navigation.ui.language[page.lang] | default: "Language" }}
+          </span>
+          <ion-icon id="lang-chevron" name="chevron-down-outline" class="ml-auto md:hidden transition-transform duration-300"></ion-icon>
+        </button>
+        <ul id="lang-options" class="hidden md:absolute right-0 bg-zinc-900 text-white md:shadow-lg md:rounded-lg md:mt-2 md:text-left w-full md:w-auto">
+          {% assign current_url = page.url %}
+          {% assign current_lang = page.lang | default: site.defaultLang %}
+
+          {% for lang_code in site.languages %}
+            {% comment %}
+              Remove language prefix from current URL (if not default)
+            {% endcomment %}
+          {% if current_lang != site.defaultLang %}
+            {% assign stripped_url = current_url | remove_first: '/' | remove_first: current_lang | prepend: '/' %}
+          {% else %}
+            {% assign stripped_url = current_url %}
+          {% endif %}
+
+          {% comment %}
+            Build new URL
+          {% endcomment %}
+          {% if lang_code == site.defaultLang %}
+            {% assign target_url = stripped_url %}
+          {% else %}
+            {% assign target_url = '/' | append: lang_code | append: stripped_url %}
+          {% endif %}
+
+          <li class="{% if forloop.first %}mt-2{% endif %}">
+            <a href="{{ target_url | replace: '//', '/' }}" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 {% if page.lang == lang_code %}font-bold{% endif %}">
+                {{ site.languageNames[lang_code] }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+  </nav>
+
+  <!-- Hamburger (Mobile only) -->
+  <span class="text-2xl cursor-pointer m-4 md:hidden z-60">
+    <ion-icon name="menu-outline" onclick="toggleMobileMenu(this)"></ion-icon>
+  </span>
+</div>
+
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('menu-list');
+    const isHidden = menu.classList.contains('opacity-0');
+    if (isHidden) {
+      menu.classList.remove('opacity-0');
+      menu.classList.remove('hidden');
+    } else {
+      menu.classList.add('opacity-0');
+      setTimeout(() => menu.classList.add('hidden'), 300);
+    }
+  }
+
+  function toggleLangDropdown(event) {
+    event.stopPropagation();
+    const langList = document.getElementById('lang-options');
+    const chevron = document.getElementById('lang-chevron');
+    langList.classList.toggle('hidden');
+    if (chevron) chevron.classList.toggle('rotate-180');
+  }
+
+  document.addEventListener('click', function (event) {
+    const langDropdown = document.getElementById('lang-options');
+    const langButton = event.target.closest('#language-button');
+    const isInsideDropdown = langDropdown && langDropdown.contains(event.target);
+    if (!isInsideDropdown && !langButton && window.innerWidth >= 768) {
+      langDropdown?.classList.add('hidden');
+      document.getElementById('lang-chevron')?.classList.remove('rotate-180');
+    }
+  });
+</script>

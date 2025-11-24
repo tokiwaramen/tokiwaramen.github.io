@@ -1,0 +1,37 @@
+en:
+  home: Home
+  menu: Menu
+  faq: FAQ
+  contact: Contact
+
+zh:
+  home: 主页
+  menu: 菜单
+  faq: 常见问题
+  contact: 联系我们
+
+ja:
+  home: ホーム
+  menu: メニュー
+  faq: よくある質問
+  contact: お問い合わせ
+
+ko:
+  home: 홈
+  menu: 메뉴
+  faq: 자주 묻는 질문
+  contact: 문의하기
+
+fr:
+  home: Accueil
+  menu: Menu
+  faq: FAQ
+  contact: Contact
+
+ui:
+  language:
+    en: Language
+    zh: 语言
+    ja: 言語
+    ko: 언어
+    fr: Langue

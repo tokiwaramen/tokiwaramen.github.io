@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FAQ - Tokiwa Ramen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tokiwa Ramen site">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+  <div class="container mx-auto py-4">
+
+    <!-- NAVIGATION -->
+<div class="flex justify-between items-center p-4">
+  <!-- Desktop Nav & Mobile Menu -->
+  <nav class="w-full">
+    <ul id="menu-list" class="hidden md:flex md:justify-end md:static md:bg-transparent md:p-0 flex-col absolute top-0 left-0 w-full bg-zinc-900 text-white p-8 md:flex-row md:min-h-0 min-h-screen z-50 transition-opacity duration-300 opacity-0 md:opacity-100">
+
+      <!-- Close Button (Mobile only) -->
+      <li class="flex justify-end md:hidden">
+        <button onclick="toggleMobileMenu()" class="text-3xl mb-6">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </li>
+
+      <!-- Main Menu Items -->
+      
+      
+
+      <li class="mx-4 my-6"><a href="/" class="uppercase hover:text-[rgb(162,131,78)]">Home</a></li>
+      <li class="mx-4 my-6"><a href="/menu/" class="uppercase hover:text-[rgb(162,131,78)]">Menu</a></li>
+      <li class="mx-4 my-6"><a href="/faq/" class="uppercase hover:text-[rgb(162,131,78)]">FAQ</a></li>
+      <li class="mx-4 my-6"><a href="/contact/" class="uppercase hover:text-[rgb(162,131,78)]">Contact</a></li>
+
+
+      <!-- Language Switcher -->
+      <li class="mx-4 my-6 w-full md:w-auto relative">
+        <button id="language-button" onclick="toggleLangDropdown(event)" class="uppercase flex items-center w-full md:w-auto hover:text-[rgb(162,131,78)]">
+          <ion-icon name="globe-outline" class="text-xl mr-2 transition-colors duration-300"></ion-icon>
+          <span class="md:hidden">
+            Language
+          </span>
+          <ion-icon id="lang-chevron" name="chevron-down-outline" class="ml-auto md:hidden transition-transform duration-300"></ion-icon>
+        </button>
+        <ul id="lang-options" class="hidden md:absolute right-0 bg-zinc-900 text-white md:shadow-lg md:rounded-lg md:mt-2 md:text-left w-full md:w-auto">
+          
+          
+
+          
+            
+          
+
+          
+          
+
+          <li class="mt-2">
+            <a href="/faq/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 font-bold">
+                English
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/zh/faq/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                中文
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/ja/faq/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                日本語
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/ko/faq/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                한국어
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/fr/faq/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                Français
+            </a>
+          </li>
+        
+      </ul>
+  </nav>
+
+  <!-- Hamburger (Mobile only) -->
+  <span class="text-2xl cursor-pointer m-4 md:hidden z-60">
+    <ion-icon name="menu-outline" onclick="toggleMobileMenu(this)"></ion-icon>
+  </span>
+</div>
+
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('menu-list');
+    const isHidden = menu.classList.contains('opacity-0');
+    if (isHidden) {
+      menu.classList.remove('opacity-0');
+      menu.classList.remove('hidden');
+    } else {
+      menu.classList.add('opacity-0');
+      setTimeout(() => menu.classList.add('hidden'), 300);
+    }
+  }
+
+  function toggleLangDropdown(event) {
+    event.stopPropagation();
+    const langList = document.getElementById('lang-options');
+    const chevron = document.getElementById('lang-chevron');
+    langList.classList.toggle('hidden');
+    if (chevron) chevron.classList.toggle('rotate-180');
+  }
+
+  document.addEventListener('click', function (event) {
+    const langDropdown = document.getElementById('lang-options');
+    const langButton = event.target.closest('#language-button');
+    const isInsideDropdown = langDropdown && langDropdown.contains(event.target);
+    if (!isInsideDropdown && !langButton && window.innerWidth >= 768) {
+      langDropdown?.classList.add('hidden');
+      document.getElementById('lang-chevron')?.classList.remove('rotate-180');
+    }
+  });
+</script>
+ 
+
+    <div class="flex flex-col justify-center items-center">
+      <div class="splash-little">
+        <img src="/assets/images/tokiwa_vsm.png" alt="Tokiwa Ramen logo" />
+      </div>
+      <div class="content w-4/5 md:w-3/4">
+        <h5 class="text-center text-base md:text-md lg:text-lg">
+          
+        </h5>
+
+        <h4 class="text-2xl lg:text-3xl text-center m-12"></h4>
+
+        <h5 class="text-align-center text-base md:text-md lg:text-lg">Our goal is to provide naturally flavoured, traditional ramen soup. To achieve the perfect taste, we prepare our soup daily using quality ingredients which are locally sourced where possible. That is why we make a limited amount of soup each day. No artificial seasonings, preservatives, or MSG are used.</h5>
+<h4 class="text-2xl lg:text-3xl text-center m-12">FAQs</h4>
+<details class="open:bg-neutral-500 open:text-black">
+    <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">What are your hours?</summary>
+    <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+        <p>We're OPEN every day from 11:00 am to 3:00 pm.</p>
+    </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+     <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">Do you take reservations?</summary>          
+     <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+        <p>Unfortunately, we do NOT offer any reservations. We are exlusively walk-in based.</p>
+     </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+    <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">Do you provide ready-to-eat ramen for take-out?</summary>
+        <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+            <p>We do not offer ready-to-eat Ramen for take-out.</p>
+        </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+    <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">Do you accept credit cards?</summary>
+        <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+            <p>NO. We do NOT accept credit cards. Cash or Debit only.</p>
+        </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+    <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">Does your food contain any MSG?</summary>
+        <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+            <p>No artificial seasonings, preservatives, or MSG are used in the preparation of our food.</p>
+        </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+    <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">What about allergies?</summary>
+        <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+            <p>We are peanut-free. Please check with our server if you have any other food allergy concerns.</p>
+        </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+     <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">Do you have a vegetarian option?</summary>
+         <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+            <p>Our vegetarian options would be Veggie Goma and Vegetarian Rice Bowl.</p>
+        </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+    <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">Are gift certificates available?</summary>
+        <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+            <p>Yes, and the gift card can only be used for dine-in.</p>
+        </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+    <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">Additional questions?</summary>
+         <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+            <p>Give us a call at <a href="tel:+7807611400">780-761-1400</a> or email us at <a href="mailto:info@tokiwaramen.ca">info@tokiwaramen.ca</a>, we'll be happy to assist you!</p>
+        </div>
+</details>
+
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const details = document.querySelectorAll('details');
+    details.forEach((detail) => {
+      detail.addEventListener('toggle', function () {
+        if (this.open) {
+          details.forEach((other) => {
+            if (other !== this && other.open) {
+              other.removeAttribute('open');
+            }
+          });
+        }
+        const content = this.querySelector('.bg-white');
+        if (this.open) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = '0';
+        }
+      });
+    });
+  </script>
+
+  <footer class="text-center p-10 text-sm text-gray-400">© 2025 Tokiwa Ramen</footer>
+</body>
+</html>

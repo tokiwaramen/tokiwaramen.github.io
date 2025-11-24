@@ -1,0 +1,16 @@
+url: "https://tokiwaramen.ca/"
+
+languages: ["en", "zh", "ja", "ko", "fr"]
+defaultLang: "en"
+
+languageNames:
+  en: English
+  zh: 中文
+  ja: 日本語
+  ko: 한국어
+  fr: Français
+
+include:
+  - _pages
+
+exclude_from_localizations: ["assets", "favicon.ico", "CNAME"]

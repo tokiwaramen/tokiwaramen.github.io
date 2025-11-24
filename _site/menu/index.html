@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Menu - Tokiwa Ramen</title>
+  <meta name="description" content="Tokiwa Ramen site">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <div class="container mx-auto px-4">
+    
+    <!-- NAVIGATION -->
+<div class="flex justify-between items-center p-4">
+  <!-- Desktop Nav & Mobile Menu -->
+  <nav class="w-full">
+    <ul id="menu-list" class="hidden md:flex md:justify-end md:static md:bg-transparent md:p-0 flex-col absolute top-0 left-0 w-full bg-zinc-900 text-white p-8 md:flex-row md:min-h-0 min-h-screen z-50 transition-opacity duration-300 opacity-0 md:opacity-100">
+
+      <!-- Close Button (Mobile only) -->
+      <li class="flex justify-end md:hidden">
+        <button onclick="toggleMobileMenu()" class="text-3xl mb-6">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </li>
+
+      <!-- Main Menu Items -->
+      
+      
+
+      <li class="mx-4 my-6"><a href="/" class="uppercase hover:text-[rgb(162,131,78)]">Home</a></li>
+      <li class="mx-4 my-6"><a href="/menu/" class="uppercase hover:text-[rgb(162,131,78)]">Menu</a></li>
+      <li class="mx-4 my-6"><a href="/faq/" class="uppercase hover:text-[rgb(162,131,78)]">FAQ</a></li>
+      <li class="mx-4 my-6"><a href="/contact/" class="uppercase hover:text-[rgb(162,131,78)]">Contact</a></li>
+
+
+      <!-- Language Switcher -->
+      <li class="mx-4 my-6 w-full md:w-auto relative">
+        <button id="language-button" onclick="toggleLangDropdown(event)" class="uppercase flex items-center w-full md:w-auto hover:text-[rgb(162,131,78)]">
+          <ion-icon name="globe-outline" class="text-xl mr-2 transition-colors duration-300"></ion-icon>
+          <span class="md:hidden">
+            Language
+          </span>
+          <ion-icon id="lang-chevron" name="chevron-down-outline" class="ml-auto md:hidden transition-transform duration-300"></ion-icon>
+        </button>
+        <ul id="lang-options" class="hidden md:absolute right-0 bg-zinc-900 text-white md:shadow-lg md:rounded-lg md:mt-2 md:text-left w-full md:w-auto">
+          
+          
+
+          
+            
+          
+
+          
+          
+
+          <li class="mt-2">
+            <a href="/menu/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 font-bold">
+                English
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/zh/menu/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                中文
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/ja/menu/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                日本語
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/ko/menu/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                한국어
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/fr/menu/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                Français
+            </a>
+          </li>
+        
+      </ul>
+  </nav>
+
+  <!-- Hamburger (Mobile only) -->
+  <span class="text-2xl cursor-pointer m-4 md:hidden z-60">
+    <ion-icon name="menu-outline" onclick="toggleMobileMenu(this)"></ion-icon>
+  </span>
+</div>
+
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('menu-list');
+    const isHidden = menu.classList.contains('opacity-0');
+    if (isHidden) {
+      menu.classList.remove('opacity-0');
+      menu.classList.remove('hidden');
+    } else {
+      menu.classList.add('opacity-0');
+      setTimeout(() => menu.classList.add('hidden'), 300);
+    }
+  }
+
+  function toggleLangDropdown(event) {
+    event.stopPropagation();
+    const langList = document.getElementById('lang-options');
+    const chevron = document.getElementById('lang-chevron');
+    langList.classList.toggle('hidden');
+    if (chevron) chevron.classList.toggle('rotate-180');
+  }
+
+  document.addEventListener('click', function (event) {
+    const langDropdown = document.getElementById('lang-options');
+    const langButton = event.target.closest('#language-button');
+    const isInsideDropdown = langDropdown && langDropdown.contains(event.target);
+    if (!isInsideDropdown && !langButton && window.innerWidth >= 768) {
+      langDropdown?.classList.add('hidden');
+      document.getElementById('lang-chevron')?.classList.remove('rotate-180');
+    }
+  });
+</script>
+
+
+    <!-- Logo -->
+    <div class="flex justify-center my-6">
+      <img src="/assets/images/tokiwa_vsm.png" alt="Tokiwa Logo">
+    </div>
+
+    <!-- Menu Content injected from .md files -->
+    <div class="menu content w-80 md:w-3/4 mx-auto">
+      <div class="menu content w-80 md:w-3/4">
+  <h1 class="uppercase text-2xl lg:text-3xl text-center m-6">Ramen</h1>
+  <div class="mb-4">
+    <p class="text-align-center md:text-base">
+      All RAMEN comes with Pork Charshu or Nikumiso (Chopped Pork), Wood Ear Mushroom, Half Boiled Egg, Bean Sprouts, Shanghai Bok Choi, and Green Onion.
+    </p>
+  </div>
+  <p class="text-align-center md:text-base">Zero preservatives used. All soup stock ingredients are natural and made in-house daily.</p>
+  
+  <!-- TEN HOUR PORK SOUP -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="text-2xl lg:text-3xl mt-20 mb-2">Ten Hour Pork Soup</h2>
+      <p>Served with pork charshu (braised pork), except GOMA GOMA<br /> and SPICY GOMA</p>
+    </div>
+    
+    
+    
+    <div class="menu-item">
+      <h3>Tokyo Tonkotsu</h3>
+      <div>Tokyo style, shoyu (soy) broth</div>
+      <div>16.0</div>
+    </div>
+  
+    
+    
+    <div class="menu-item">
+      <h3>Black Garlic</h3>
+      <div>shoyu broth with black garlic oil</div>
+      <div>17.0</div>
+    </div>
+  
+    
+    
+    <div class="menu-item">
+      <h3>Goma Goma</h3>
+      <div>nikumiso (chopped pork) with chili oil drizzle</div>
+      <div>17.0</div>
+    </div>
+  
+    
+    
+    <div class="menu-item">
+      <h3>Spicy Goma</h3>
+      <div>moderately spicy goma goma</div>
+      <div>17.5</div>
+    </div>
+  
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- CHICKEN SOUP -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="text-2xl lg:text-3xl mb-2">Six Hour Chicken Soup</h2>
+      <div>Served with pork charshu (braised pork). May be substituted<br /> for chicken for an additional $2</div>
+    </div>
+    
+    
+    
+    <div class="menu-item">
+      <h3>Chuka Soba</h3>
+      <div>classic shoyu (soy) broth</div>
+      <div>16.0</div>
+    </div>
+  
+    
+    
+    <div class="menu-item">
+      <h3>Yuzu Shio</h3>
+      <div>yuzu (Japanese citrus) broth</div>
+      <div>17.0</div>
+    </div>
+  
+    
+    
+    <div class="menu-item">
+      <h3>Hokkaido Miso</h3>
+      <div>3 kinds of miso bases</div>
+      <div>17.0</div>
+    </div>
+  
+    
+    
+    <div class="menu-item">
+      <h3>Spicy Miso</h3>
+      <div>moderately spicy Hokkaido Miso</div>
+      <div>17.5</div>
+    </div>
+  
+    
+    
+    <div class="menu-item">
+      <h3>Aka Kara</h3>
+      <div>spicy, 3 kinds of chili peppers</div>
+      <div>17.5</div>
+    </div>
+  
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- HOUSE SPECIAL -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="uppercase text-2xl lg:text-3xl">House Special Soup</h2>
+    </div>
+    
+    
+    
+    <div class="menu-item">
+      <h3>Veggie Goma</h3>
+      <div>
+        
+          sesame, miso broth with tofu and tomatoes
+        
+      </div>
+      
+        <div>17.5</div>
+      
+    </div>
+  
+    
+    
+    <div class="menu-item">
+      <h3>Feature Ramen</h3>
+      <div>
+        
+          Please ask our server
+        
+      </div>
+      
+    </div>
+  
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- EXTRA TOPPINGS -->
+ <div class="section">
+  <div class="section-header">
+    <h2 class="uppercase text-2xl lg:text-3xl">Extra Toppings</h2>
+  </div>
+  
+  
+  
+    
+    
+    
+    
+    <div class="menu-item">
+      <h3 class="no-transform font-bold text-lg md:text-xl">
+        pork charshu / nikumiso (chopped pork)
+      </h3>
+      <div>3.5</div>
+    </div>
+  
+    
+    
+    
+    
+    <div class="menu-item">
+      <h3 class="no-transform font-bold text-lg md:text-xl">
+        chicken charshu
+      </h3>
+      <div>4.5</div>
+    </div>
+  
+    
+    
+    
+    
+    <div class="menu-item">
+      <h3 class="no-transform font-bold text-lg md:text-xl">
+        egg / mushrooms / bok choy / greens / garlic
+      </h3>
+      <div>1.5</div>
+    </div>
+  
+</div>
+
+  <div class="spacer"></div>
+
+  <!-- RICE BOWLS -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="uppercase text-2xl lg:text-3xl mb-2">Rice Bowls and Sides</h2>
+      <div>Served with pork or chicken, bean sprouts, greens and<br /> house-made teriyaki sauce</div>
+    </div>
+    
+      
+      
+      <div class="menu-item">
+        <h3 class="text-lg md:text-xl lg:text-2xl">Tokiwa Style Beef Gyudon</h3>
+        <div></div>
+        <div>15</div>
+      </div>
+    
+      
+      
+      <div class="menu-item">
+        <h3 class="text-lg md:text-xl lg:text-2xl">Pork Rice Bowl</h3>
+        <div></div>
+        <div>small 5 / large 11</div>
+      </div>
+    
+      
+      
+      <div class="menu-item">
+        <h3 class="text-lg md:text-xl lg:text-2xl">Chicken Rice Bowl</h3>
+        <div></div>
+        <div>small 6.5 / large 13</div>
+      </div>
+    
+      
+      
+      <div class="menu-item">
+        <h3 class="text-lg md:text-xl lg:text-2xl">Vegetarian Rice Bowl</h3>
+        <div></div>
+        <div>small 5 / large 11</div>
+      </div>
+    
+      
+      
+      <div class="menu-item">
+        <h3 class="text-lg md:text-xl lg:text-2xl">Plain Rice Bowl</h3>
+        <div></div>
+        <div>small 2.5</div>
+      </div>
+    
+      
+      
+      <div class="menu-item">
+        <h3 class="text-lg md:text-xl lg:text-2xl">Bou Gyoza (4 pcs)</h3>
+        <div></div>
+        <div>6.5</div>
+      </div>
+    
+  </div>
+
+  <div class="spacer"></div>
+  
+ <!-- BEVERAGES -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="uppercase text-2xl lg:text-3xl">Beverages</h2>
+    </div>
+    
+    
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Cold Brew Unsweetened Tea</h3>
+          <div>Fukasmushi (Green) / Organic Houjicha (Black)</div>
+          <div>glass (12 oz) 3.5 / bottle (33 oz) 8</div>
+        </div>
+      
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Hot Green Tea</h3>
+          <div>Genmaicha</div>
+          <div>3.5</div>
+        </div>
+      
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Japanese Tall Beer</h3>
+          <div></div>
+          <div>8</div>
+        </div>
+      
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Japanese Imported Craft Beer</h3>
+          <div></div>
+          <div>9</div>
+        </div>
+      
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Japanese Masumi Blue Sake</h3>
+          <div></div>
+          <div>6 oz bottle 11</div>
+        </div>
+      
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Hokkaido Zoo Cup Sake (Hot or Cold)</h3>
+          <div></div>
+          <div>6.5 oz 11</div>
+        </div>
+      
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Craft Soda</h3>
+          <div>ginger beer / root beer</div>
+          <div>6</div>
+        </div>
+      
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Ramune</h3>
+          <div></div>
+          <div>4.5</div>
+        </div>
+      
+    
+      
+      
+      
+        
+        
+        
+          
+          
+          <div class="menu-item">
+            <h3 class="text-lg md:text-xl lg:text-2xl">Pop / Juice</h3>
+            <div></div>
+            <div>3</div>
+          </div>
+        
+          
+          
+          <div class="menu-item">
+            <h3 class="text-lg md:text-xl lg:text-2xl">Sparkling Water</h3>
+            <div></div>
+            <div>3.75</div>
+          </div>
+        
+      
+    
+  </div>
+
+  <div class="spacer"></div>
+  <div class="mb-6">
+    <p class="text-align-center md:text-md lg:text-lg">We are peanut free. Please check with our server if you have any other food allergy concerns.</p>
+  </div>
+  <p class="text-align-center md:text-md lg:text-lg">Tables of 6 or more will be charged an automatic 18% gratuity. Bills will not be split.</p>
+  <div class="uppercase font-semibold text-xl md:text-2xl mt-10">Cash &amp; Debit Only!</div>
+</div>
+
+    </div>
+  </div>
+<footer class="text-center p-10 text-sm text-gray-400">© 2025 Tokiwa Ramen</footer>
+</body>
+</html>

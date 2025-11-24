@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <title>常见问题 - Tokiwa Ramen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tokiwa Ramen site">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+  <div class="container mx-auto py-4">
+
+    <!-- NAVIGATION -->
+<div class="flex justify-between items-center p-4">
+  <!-- Desktop Nav & Mobile Menu -->
+  <nav class="w-full">
+    <ul id="menu-list" class="hidden md:flex md:justify-end md:static md:bg-transparent md:p-0 flex-col absolute top-0 left-0 w-full bg-zinc-900 text-white p-8 md:flex-row md:min-h-0 min-h-screen z-50 transition-opacity duration-300 opacity-0 md:opacity-100">
+
+      <!-- Close Button (Mobile only) -->
+      <li class="flex justify-end md:hidden">
+        <button onclick="toggleMobileMenu()" class="text-3xl mb-6">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </li>
+
+      <!-- Main Menu Items -->
+      
+      
+
+      <li class="mx-4 my-6"><a href="/zh/" class="uppercase hover:text-[rgb(162,131,78)]">主页</a></li>
+      <li class="mx-4 my-6"><a href="/zh/menu/" class="uppercase hover:text-[rgb(162,131,78)]">菜单</a></li>
+      <li class="mx-4 my-6"><a href="/zh/faq/" class="uppercase hover:text-[rgb(162,131,78)]">常见问题</a></li>
+      <li class="mx-4 my-6"><a href="/zh/contact/" class="uppercase hover:text-[rgb(162,131,78)]">联系我们</a></li>
+
+
+      <!-- Language Switcher -->
+      <li class="mx-4 my-6 w-full md:w-auto relative">
+        <button id="language-button" onclick="toggleLangDropdown(event)" class="uppercase flex items-center w-full md:w-auto hover:text-[rgb(162,131,78)]">
+          <ion-icon name="globe-outline" class="text-xl mr-2 transition-colors duration-300"></ion-icon>
+          <span class="md:hidden">
+            语言
+          </span>
+          <ion-icon id="lang-chevron" name="chevron-down-outline" class="ml-auto md:hidden transition-transform duration-300"></ion-icon>
+        </button>
+        <ul id="lang-options" class="hidden md:absolute right-0 bg-zinc-900 text-white md:shadow-lg md:rounded-lg md:mt-2 md:text-left w-full md:w-auto">
+          
+          
+
+          
+            
+          
+
+          
+          
+
+          <li class="mt-2">
+            <a href="/faq/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                English
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/zh/faq/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 font-bold">
+                中文
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/ja/faq/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                日本語
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/ko/faq/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                한국어
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/fr/faq/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                Français
+            </a>
+          </li>
+        
+      </ul>
+  </nav>
+
+  <!-- Hamburger (Mobile only) -->
+  <span class="text-2xl cursor-pointer m-4 md:hidden z-60">
+    <ion-icon name="menu-outline" onclick="toggleMobileMenu(this)"></ion-icon>
+  </span>
+</div>
+
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('menu-list');
+    const isHidden = menu.classList.contains('opacity-0');
+    if (isHidden) {
+      menu.classList.remove('opacity-0');
+      menu.classList.remove('hidden');
+    } else {
+      menu.classList.add('opacity-0');
+      setTimeout(() => menu.classList.add('hidden'), 300);
+    }
+  }
+
+  function toggleLangDropdown(event) {
+    event.stopPropagation();
+    const langList = document.getElementById('lang-options');
+    const chevron = document.getElementById('lang-chevron');
+    langList.classList.toggle('hidden');
+    if (chevron) chevron.classList.toggle('rotate-180');
+  }
+
+  document.addEventListener('click', function (event) {
+    const langDropdown = document.getElementById('lang-options');
+    const langButton = event.target.closest('#language-button');
+    const isInsideDropdown = langDropdown && langDropdown.contains(event.target);
+    if (!isInsideDropdown && !langButton && window.innerWidth >= 768) {
+      langDropdown?.classList.add('hidden');
+      document.getElementById('lang-chevron')?.classList.remove('rotate-180');
+    }
+  });
+</script>
+ 
+
+    <div class="flex flex-col justify-center items-center">
+      <div class="splash-little">
+        <img src="/assets/images/tokiwa_vsm.png" alt="Tokiwa Ramen logo" />
+      </div>
+      <div class="content w-4/5 md:w-3/4">
+        <h5 class="text-center text-base md:text-md lg:text-lg">
+          
+        </h5>
+
+        <h4 class="text-2xl lg:text-3xl text-center m-12"></h4>
+
+        <h5 class="text-align-center text-base md:text-md lg:text-lg">我们致力于提供天然风味、传统风味的拉面汤。为了追求完美的口味，我们每天使用优质食材现熬汤底，并尽可能选用本地采购的原料。因此，我们每天供应的汤量有限，不添加人工调味料、防腐剂或味精。</h5>
+<h4 class="text-2xl lg:text-3xl text-center m-12">常见问题</h4>
+<details class="open:bg-neutral-500 open:text-black">
+  <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">你们的营业时间是？</summary>
+  <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+    <p>我们每天开放时间为上午11点至下午3点。</p>
+  </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+  <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">你们接受预订吗？</summary>
+  <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+    <p>很抱歉，我们不接受任何预订，仅限现场等候入座。</p>
+  </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+  <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">你们提供外带拉面吗？</summary>
+  <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+    <p>我们不提供即食拉面的外带服务。</p>
+  </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+  <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">你们接受信用卡吗？</summary>
+  <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+    <p>我们只接受现金或借记卡，不接受信用卡。</p>
+  </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+  <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">你们的食物含有味精吗？</summary>
+  <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+    <p>我们不使用任何人工调味料、防腐剂或味精。</p>
+  </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+  <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">有关于过敏的问题怎么办？</summary>
+  <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+    <p>我们不使用花生。如有其他过敏相关问题，请向服务员咨询。</p>
+  </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+  <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">你们有素食选项吗？</summary>
+  <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+    <p>我们提供素食拉面（Veggie Goma）和素食饭（Vegetarian Rice Bowl）。</p>
+  </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+  <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">你们提供礼品卡吗？</summary>
+  <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+    <p>我们提供礼品卡，仅限堂食使用。</p>
+  </div>
+</details>
+
+<details class="open:bg-neutral-500 open:text-black">
+  <summary class="bg-inherit p-3 cursor-pointer text-base md:text-md lg:text-lg">还有其他问题？</summary>
+  <div class="bg-white p-3 text-sm md:text-base lg:text-md font-light">
+    <p>欢迎致电 <a href="tel:+7807611400">780-761-1400</a> 或发送邮件至 <a href="mailto:info@tokiwaramen.ca">info@tokiwaramen.ca</a>，我们将很乐意为您服务！</p>
+  </div>
+</details>
+
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const details = document.querySelectorAll('details');
+    details.forEach((detail) => {
+      detail.addEventListener('toggle', function () {
+        if (this.open) {
+          details.forEach((other) => {
+            if (other !== this && other.open) {
+              other.removeAttribute('open');
+            }
+          });
+        }
+        const content = this.querySelector('.bg-white');
+        if (this.open) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = '0';
+        }
+      });
+    });
+  </script>
+
+  <footer class="text-center p-10 text-sm text-gray-400">© 2025 Tokiwa Ramen</footer>
+</body>
+</html>

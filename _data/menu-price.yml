@@ -1,0 +1,102 @@
+pork_soup:
+  tokyo_tonkotsu:
+    name: Tokyo Tonkotsu
+    price: 16.00
+  black_garlic:
+    name: Black Garlic
+    price: 17.00
+  goma_goma:
+    name: Goma Goma
+    price: 17.00
+  spicy_goma:
+    name: Spicy Goma
+    price: 17.50
+
+chicken_soup:
+  chuka_soba:
+    name: Chuka Soba
+    price: 16.00
+  yuzu_shio:
+    name: Yuzu Shio
+    price: 17.00
+  hokkaido_miso:
+    name: Hokkaido Miso
+    price: 17.00
+  spicy_miso:
+    name: Spicy Miso
+    price: 17.50
+  aka_kara:
+    name: Aka Kara
+    price: 17.50
+
+house_special:
+  veggie_goma:
+    name: Veggie Goma
+    price: 17.50
+  feature_ramen:
+    name: Feature Ramen
+    price: ""
+
+extra_toppings:
+  pork:
+    name: pork charshu / nikumiso (chopped pork)
+    price: 3.50
+  chicken:
+    name: chicken charshu
+    price: 4.50
+  assorted:
+    name: egg / mushrooms / bok choy / greens / garlic
+    price: 1.50
+
+rice_bowls:
+  beef_gyudon:
+    name: Tokiwa Style Beef Gyudon
+    price: 15
+  pork_bowl:
+    name: Pork Rice Bowl
+    price: "small 5 / large 11"
+  chicken_bowl:
+    name: Chicken Rice Bowl
+    price: "small 6.5 / large 13"
+  veggie_bowl:
+    name: Vegetarian Rice Bowl
+    price: "small 5 / large 11"
+  plain_rice:
+    name: Plain Rice Bowl
+    price: "small 2.5"
+  bou_gyoza:
+    name: Bou Gyoza (4 pcs)
+    price: 6.5
+
+beverages:
+  cold_tea:
+    name: Cold Brew Unsweetened Tea
+    price: "glass (12 oz) 3.5 / bottle (33 oz) 8"
+  hot_tea:
+    name: Hot Green Tea
+    price: 3.5
+  beer_tall:
+    name: Japanese Tall Beer
+    price: 8
+  beer_craft:
+    name: Japanese Imported Craft Beer
+    price: 9
+  sake_masumi:
+    name: Japanese Masumi Blue Sake
+    price: "6 oz bottle 11"
+  sake_zoo:
+    name: Hokkaido Zoo Cup Sake (Hot or Cold)
+    price: "6.5 oz 11"
+  craft_soda:
+    name: Craft Soda
+    price: 6
+  ramune:
+    name: Ramune
+    price: 4.5
+  soft_drink:
+    pop:
+      name: Pop / Juice
+      price: 3
+    sparkling:
+      name: Sparkling Water
+      price: 3.75

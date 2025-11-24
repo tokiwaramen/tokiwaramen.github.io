@@ -1,0 +1,222 @@
+pork_soup:
+  tokyo_tonkotsu:
+    description:
+      en: Tokyo style, shoyu (soy) broth
+      zh: 东京豚骨，酱油汤底
+      ja:
+      ko:
+      fr:
+  black_garlic:
+    description:
+      en: shoyu broth with black garlic oil
+      zh: 黑蒜油豚骨
+      ja:
+      ko:
+      fr:
+  goma_goma:
+    description:
+      en: nikumiso (chopped pork) with chili oil drizzle
+      zh: 浓郁芝麻酱汤底，搭配肉味增
+      ja:
+      ko:
+      fr:
+  spicy_goma:
+    description:
+      en: moderately spicy goma goma
+      zh: 中辣芝麻酱汤底
+      ja:
+      ko:
+      fr:
+
+chicken_soup:
+  chuka_soba:
+    description:
+      en: classic shoyu (soy) broth
+      zh: 经典酱油汤底
+      ja:
+      ko:
+      fr:
+  yuzu_shio:
+    description:
+      en: yuzu (Japanese citrus) broth
+      zh: 日式柚子盐味汤底
+      ja:
+      ko:
+      fr:
+  hokkaido_miso:
+    description:
+      en: 3 kinds of miso bases
+      zh: 北海道风味，三种味噌混合汤底
+      ja:
+      ko:
+      fr:
+  spicy_miso:
+    description:
+      en: moderately spicy Hokkaido Miso
+      zh: 中辣北海道味噌汤底
+      ja:
+      ko:
+      fr:
+  aka_kara:
+    description:
+      en: spicy, 3 kinds of chili peppers
+      zh: 赤辛汤底，三种辣椒调制
+      ja:
+      ko:
+      fr:
+
+house_special:
+  veggie_goma:
+    description:
+      en: sesame, miso broth with tofu and tomatoes
+      zh: 豆腐芝麻味噌汤底
+      ja:
+      ko:
+      fr:
+  feature_ramen:
+    description:
+      en: ""
+      zh: ""
+      ja:
+      ko:
+      fr:
+
+extra_toppings:
+  pork:
+    description:
+      en: ""
+      zh: 猪肉叉烧 / 肉味增 (碎猪肉沫)
+      ja:
+      ko:
+      fr:
+  chicken:
+    description:
+      en: ""
+      zh: 鸡肉叉烧
+      ja:
+      ko:
+      fr:
+  assorted:
+    description:
+      en: ""
+      zh: 溏心蛋 / 香菇 / 青菜 / 葱 / 蒜
+      ja:
+      ko:
+      fr:
+
+rice_bowls:
+  beef_gyudon:
+    description:
+      en: ""
+      zh: 牛肉盖饭
+      ja:
+      ko:
+      fr:
+  pork_bowl:
+    description:
+      en: ""
+      zh: 猪肉叉烧饭
+      ja:
+      ko:
+      fr:
+  chicken_bowl:
+    description:
+      en: ""
+      zh: 鸡肉叉烧饭
+      ja:
+      ko:
+      fr:
+  veggie_bowl:
+    description:
+      en: ""
+      zh: 素食饭
+      ja:
+      ko:
+      fr:
+  plain_rice:
+    description:
+      en: ""
+      zh: 白米饭
+      ja:
+      ko:
+      fr:
+  bou_gyoza:
+    description:
+      en: ""
+      zh: 日式猪肉煎饺
+      ja:
+      ko:
+      fr:
+
+beverages:
+  cold_tea:
+    description:
+      en: Fukasmushi (Green) / Organic Houjicha (Black)
+      zh: 深蒸绿茶 / 有机焙茶
+      ja:
+      ko:
+      fr:
+  hot_tea:
+    description:
+      en: Genmaicha
+      zh: 玄米茶
+      ja:
+      ko:
+      fr:
+  beer_tall:
+    description:
+      en:
+      zh: 日本啤酒
+      ja:
+      ko:
+      fr:
+  beer_craft:
+    description:
+      en:
+      zh: 日本精酿啤酒
+      ja:
+      ko:
+      fr:
+  sake_masumi:
+    description:
+      en:
+      zh: 真澄蓝瓶清酒
+      ja:
+      ko:
+      fr:
+  sake_zoo:
+    description:
+      en:
+      zh: 北海道动物园杯清酒(冷热皆可)
+      ja:
+      ko:
+      fr:
+  craft_soda:
+    description:
+      en: ginger beer / root beer
+      zh: 姜汁汽水 / 根汁汽水
+      ja:
+      ko:
+      fr:
+  ramune:
+    description:
+      en:
+      zh: 日本弹珠汽水
+      ja:
+      ko:
+      fr:
+  soft_drink:
+    pop:
+      description:
+        en:
+        zh: 汽水、果汁
+        ja:
+        ko:
+        fr:
+    sparkling:
+      description:
+        en:
+        zh: 气泡水
+        ja:
+        ko:
+        fr:

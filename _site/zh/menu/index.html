@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>菜单 - Tokiwa Ramen</title>
+  <meta name="description" content="Tokiwa Ramen site">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <div class="container mx-auto px-4">
+    
+    <!-- NAVIGATION -->
+<div class="flex justify-between items-center p-4">
+  <!-- Desktop Nav & Mobile Menu -->
+  <nav class="w-full">
+    <ul id="menu-list" class="hidden md:flex md:justify-end md:static md:bg-transparent md:p-0 flex-col absolute top-0 left-0 w-full bg-zinc-900 text-white p-8 md:flex-row md:min-h-0 min-h-screen z-50 transition-opacity duration-300 opacity-0 md:opacity-100">
+
+      <!-- Close Button (Mobile only) -->
+      <li class="flex justify-end md:hidden">
+        <button onclick="toggleMobileMenu()" class="text-3xl mb-6">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </li>
+
+      <!-- Main Menu Items -->
+      
+      
+
+      <li class="mx-4 my-6"><a href="/zh/" class="uppercase hover:text-[rgb(162,131,78)]">主页</a></li>
+      <li class="mx-4 my-6"><a href="/zh/menu/" class="uppercase hover:text-[rgb(162,131,78)]">菜单</a></li>
+      <li class="mx-4 my-6"><a href="/zh/faq/" class="uppercase hover:text-[rgb(162,131,78)]">常见问题</a></li>
+      <li class="mx-4 my-6"><a href="/zh/contact/" class="uppercase hover:text-[rgb(162,131,78)]">联系我们</a></li>
+
+
+      <!-- Language Switcher -->
+      <li class="mx-4 my-6 w-full md:w-auto relative">
+        <button id="language-button" onclick="toggleLangDropdown(event)" class="uppercase flex items-center w-full md:w-auto hover:text-[rgb(162,131,78)]">
+          <ion-icon name="globe-outline" class="text-xl mr-2 transition-colors duration-300"></ion-icon>
+          <span class="md:hidden">
+            语言
+          </span>
+          <ion-icon id="lang-chevron" name="chevron-down-outline" class="ml-auto md:hidden transition-transform duration-300"></ion-icon>
+        </button>
+        <ul id="lang-options" class="hidden md:absolute right-0 bg-zinc-900 text-white md:shadow-lg md:rounded-lg md:mt-2 md:text-left w-full md:w-auto">
+          
+          
+
+          
+            
+          
+
+          
+          
+
+          <li class="mt-2">
+            <a href="/menu/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                English
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/zh/menu/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 font-bold">
+                中文
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/ja/menu/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                日本語
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/ko/menu/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                한국어
+            </a>
+          </li>
+        
+            
+          
+
+          
+          
+
+          <li class="">
+            <a href="/fr/menu/" 
+              class="block px-2 py-1 hover:text-[rgb(162,131,78)] transition-colors duration-200 ">
+                Français
+            </a>
+          </li>
+        
+      </ul>
+  </nav>
+
+  <!-- Hamburger (Mobile only) -->
+  <span class="text-2xl cursor-pointer m-4 md:hidden z-60">
+    <ion-icon name="menu-outline" onclick="toggleMobileMenu(this)"></ion-icon>
+  </span>
+</div>
+
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('menu-list');
+    const isHidden = menu.classList.contains('opacity-0');
+    if (isHidden) {
+      menu.classList.remove('opacity-0');
+      menu.classList.remove('hidden');
+    } else {
+      menu.classList.add('opacity-0');
+      setTimeout(() => menu.classList.add('hidden'), 300);
+    }
+  }
+
+  function toggleLangDropdown(event) {
+    event.stopPropagation();
+    const langList = document.getElementById('lang-options');
+    const chevron = document.getElementById('lang-chevron');
+    langList.classList.toggle('hidden');
+    if (chevron) chevron.classList.toggle('rotate-180');
+  }
+
+  document.addEventListener('click', function (event) {
+    const langDropdown = document.getElementById('lang-options');
+    const langButton = event.target.closest('#language-button');
+    const isInsideDropdown = langDropdown && langDropdown.contains(event.target);
+    if (!isInsideDropdown && !langButton && window.innerWidth >= 768) {
+      langDropdown?.classList.add('hidden');
+      document.getElementById('lang-chevron')?.classList.remove('rotate-180');
+    }
+  });
+</script>
+
+
+    <!-- Logo -->
+    <div class="flex justify-center my-6">
+      <img src="/assets/images/tokiwa_vsm.png" alt="Tokiwa Logo">
+    </div>
+
+    <!-- Menu Content injected from .md files -->
+    <div class="menu content w-80 md:w-3/4 mx-auto">
+      <div class="menu content w-80 md:w-3/4">
+  <h1 class="uppercase text-2xl lg:text-3xl text-center m-6">拉面</h1>
+    <div class="mb-4">
+      <p class="text-align-center md:text-base">
+        所有拉面都配有叉烧肉或肉味噌、木耳、溏心蛋、豆芽、上海青、葱丝。
+      </p>
+    </div>
+    <p class="text-align-center md:text-base">不含防腐剂，汤底食材每日新鲜自制。</p>
+     <!-- TEN HOUR PORK SOUP -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="text-2xl lg:text-3xl mt-20 mb-2">十小时猪骨汤</h2>
+        <p>默认搭配猪肉叉烧, Goma Goma 和 Spicy Goma 除外 (这两款搭配肉味增)。</p>
+      </div>
+      
+      
+      
+      <div class="menu-item">
+        <h3 class="text-lg md:text-xl lg:text-2xl">Tokyo Tonkotsu</h3>
+        <div>东京豚骨，酱油汤底</div>
+        <div>16.0</div>
+      </div>
+    
+      
+      
+      <div class="menu-item">
+        <h3 class="text-lg md:text-xl lg:text-2xl">Black Garlic</h3>
+        <div>黑蒜油豚骨</div>
+        <div>17.0</div>
+      </div>
+    
+      
+      
+      <div class="menu-item">
+        <h3 class="text-lg md:text-xl lg:text-2xl">Goma Goma</h3>
+        <div>浓郁芝麻酱汤底，搭配肉味增</div>
+        <div>17.0</div>
+      </div>
+    
+      
+      
+      <div class="menu-item">
+        <h3 class="text-lg md:text-xl lg:text-2xl">Spicy Goma</h3>
+        <div>中辣芝麻酱汤底</div>
+        <div>17.5</div>
+      </div>
+    
+    </div>
+    <div class="spacer"></div>
+     <!-- CHICKEN SOUP -->
+    <div class="section">
+      <div class="section-header">
+          <h2 class="text-2xl lg:text-3xl mb-2">六小时鸡骨汤</h2>
+          <div>默认搭配叉烧肉，可加 $2 更换为鸡肉</div>
+      </div>
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Chuka Soba</h3>
+          <div>经典酱油汤底</div>
+          <div>16.0</div>
+        </div>
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Yuzu Shio</h3>
+          <div>日式柚子盐味汤底</div>
+          <div>17.0</div>
+        </div>
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Hokkaido Miso</h3>
+          <div>北海道风味，三种味噌混合汤底</div>
+          <div>17.0</div>
+        </div>
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Spicy Miso</h3>
+          <div>中辣北海道味噌汤底</div>
+          <div>17.5</div>
+        </div>
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Aka Kara</h3>
+          <div>赤辛汤底，三种辣椒调制</div>
+          <div>17.5</div>
+        </div>
+      
+    </div>
+    <div class="spacer"></div>
+      <!-- HOUSE SPECIAL -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="uppercase text-2xl lg:text-3xl">素食 &amp; 限定</h2>
+      </div>
+      
+      
+      
+      <div class="menu-item">
+        <h3 class="text-lg md:text-xl lg:text-2xl">Veggie Goma</h3>
+        <div>
+          
+            豆腐芝麻味噌汤底
+          
+        </div>
+        
+          <div>17.5</div>
+        
+      </div>
+    
+      
+      
+      <div class="menu-item">
+        <h3 class="text-lg md:text-xl lg:text-2xl">Feature Ramen</h3>
+        <div>
+          
+              限定拉面，请咨询服务员
+          
+        </div>
+        
+      </div>
+    
+    </div>
+    <div class="spacer"></div>
+      <!-- EXTRA TOPPINGS -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="uppercase text-2xl lg:text-3xl">加料选项</h2>
+      </div>
+      
+      
+      
+        
+        
+        
+        
+        <div class="menu-item">
+          <h3 class="no-transform font-bold text-lg md:text-xl">
+            猪肉叉烧 / 肉味增 (碎猪肉沫)
+          </h3>
+          <div>3.5</div>
+        </div>
+      
+        
+        
+        
+        
+        <div class="menu-item">
+          <h3 class="no-transform font-bold text-lg md:text-xl">
+            鸡肉叉烧
+          </h3>
+          <div>4.5</div>
+        </div>
+      
+        
+        
+        
+        
+        <div class="menu-item">
+          <h3 class="no-transform font-bold text-lg md:text-xl">
+            溏心蛋 / 香菇 / 青菜 / 葱 / 蒜
+          </h3>
+          <div>1.5</div>
+        </div>
+      
+    </div>
+    <div class="spacer"></div>
+      <!-- RICE BOWLS -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="uppercase text-2xl lg:text-3xl mb-2">盖饭与小吃</h2>
+        <div>搭配猪肉叉烧或鸡肉叉烧、豆芽、葱丝、以及自制照烧酱。</div>
+      </div>
+      
+        
+        
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Tokiwa Style Beef Gyudon</h3>
+          <div>牛肉盖饭</div>
+          <div>15</div>
+        </div>
+      
+        
+        
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Pork Rice Bowl</h3>
+          <div>猪肉叉烧饭</div>
+          <div>small 5 / large 11</div>
+        </div>
+      
+        
+        
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Chicken Rice Bowl</h3>
+          <div>鸡肉叉烧饭</div>
+          <div>small 6.5 / large 13</div>
+        </div>
+      
+        
+        
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Vegetarian Rice Bowl</h3>
+          <div>素食饭</div>
+          <div>small 5 / large 11</div>
+        </div>
+      
+        
+        
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Plain Rice Bowl</h3>
+          <div>白米饭</div>
+          <div>small 2.5</div>
+        </div>
+      
+        
+        
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Bou Gyoza (4 pcs)</h3>
+          <div>日式猪肉煎饺</div>
+          <div>6.5</div>
+        </div>
+      
+    </div>
+    <div class="spacer"></div>
+     <!-- BEVERAGES -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="uppercase text-2xl lg:text-3xl">饮品</h2>
+      </div>
+    
+    
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Cold Brew Unsweetened Tea</h3>
+          <div>深蒸绿茶 / 有机焙茶</div>
+          <div>glass (12 oz) 3.5 / bottle (33 oz) 8</div>
+        </div>
+      
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Hot Green Tea</h3>
+          <div>玄米茶</div>
+          <div>3.5</div>
+        </div>
+      
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Japanese Tall Beer</h3>
+          <div>日本啤酒</div>
+          <div>8</div>
+        </div>
+      
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Japanese Imported Craft Beer</h3>
+          <div>日本精酿啤酒</div>
+          <div>9</div>
+        </div>
+      
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Japanese Masumi Blue Sake</h3>
+          <div>真澄蓝瓶清酒</div>
+          <div>6 oz bottle 11</div>
+        </div>
+      
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Hokkaido Zoo Cup Sake (Hot or Cold)</h3>
+          <div>北海道动物园杯清酒(冷热皆可)</div>
+          <div>6.5 oz 11</div>
+        </div>
+      
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Craft Soda</h3>
+          <div>姜汁汽水 / 根汁汽水</div>
+          <div>6</div>
+        </div>
+      
+    
+      
+      
+      
+        <div class="menu-item">
+          <h3 class="text-lg md:text-xl lg:text-2xl">Ramune</h3>
+          <div>日本弹珠汽水</div>
+          <div>4.5</div>
+        </div>
+      
+    
+      
+      
+      
+        
+        
+        
+          
+          
+          <div class="menu-item">
+            <h3 class="text-lg md:text-xl lg:text-2xl">Pop / Juice</h3>
+            <div>汽水、果汁</div>
+            <div>3</div>
+          </div>
+        
+          
+          
+          <div class="menu-item">
+            <h3 class="text-lg md:text-xl lg:text-2xl">Sparkling Water</h3>
+            <div>气泡水</div>
+            <div>3.75</div>
+          </div>
+        
+      
+    
+    </div>
+    <div class="spacer"></div>
+    <div class="mb-6">
+      <p class="text-align-center md:text-md lg:text-lg">本店不使用花生，如有其他过敏源请向服务员咨询。</p>
+    </div>
+    <p class="text-align-center md:text-md lg:text-lg">6人或以上将自动收取 18% 服务费，账单不可拆分。</p>
+    <div class="uppercase font-semibold text-xl md:text-2xl mt-10">仅接受现金或借记卡付款！</div>
+</div>
+
+    </div>
+  </div>
+<footer class="text-center p-10 text-sm text-gray-400">© 2025 Tokiwa Ramen</footer>
+</body>
+</html>

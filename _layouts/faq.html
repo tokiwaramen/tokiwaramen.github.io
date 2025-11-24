@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }} - Tokiwa Ramen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tokiwa Ramen site">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/main.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+  <div class="container mx-auto py-4">
+
+    {% include navbar.html %} 
+
+    <div class="flex flex-col justify-center items-center">
+      <div class="splash-little">
+        <img src="/assets/images/tokiwa_vsm.png" alt="Tokiwa Ramen logo" />
+      </div>
+      <div class="content w-4/5 md:w-3/4">
+        <h5 class="text-center text-base md:text-md lg:text-lg">
+          {{ page.description }}
+        </h5>
+
+        <h4 class="text-2xl lg:text-3xl text-center m-12">{{ page.faq_title }}</h4>
+
+        {{ content }}
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const details = document.querySelectorAll('details');
+    details.forEach((detail) => {
+      detail.addEventListener('toggle', function () {
+        if (this.open) {
+          details.forEach((other) => {
+            if (other !== this && other.open) {
+              other.removeAttribute('open');
+            }
+          });
+        }
+        const content = this.querySelector('.bg-white');
+        if (this.open) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = '0';
+        }
+      });
+    });
+  </script>
+
+  <footer class="text-center p-10 text-sm text-gray-400">© {{ "now" | date: "%Y" }} Tokiwa Ramen</footer>
+</body>
+</html>
